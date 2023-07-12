@@ -17,6 +17,7 @@ val Typography = Typography(
     ),
     displayLarge = TextStyle(
         fontFamily = Inter,
+        fontWeight = FontWeight.Bold,
         fontSize = 54.sp,
     ),
     displayMedium = TextStyle(

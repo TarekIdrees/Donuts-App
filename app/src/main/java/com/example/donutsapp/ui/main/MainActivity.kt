@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.navigation.compose.rememberNavController
-import com.example.donutsapp.ui.screen.details.DetailsScreen
+import com.example.donutsapp.ui.screen.cover.CoverScreen
 import com.example.donutsapp.ui.theme.DonutsAppTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -15,7 +15,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             DonutsAppTheme {
                 val navController = rememberNavController()
-                DetailsScreen()
+                CoverScreen(navController)
             }
         }
     }
