@@ -5,7 +5,11 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
 import com.example.donutsapp.navigation.Graph
+import com.example.donutsapp.ui.screen.favorite.FavoriteScreen
 import com.example.donutsapp.ui.screen.home.HomeScreen
+import com.example.donutsapp.ui.screen.notification.NotificationScreen
+import com.example.donutsapp.ui.screen.profile.ProfileScreen
+import com.example.donutsapp.ui.screen.shop.ShopScreen
 
 
 fun NavGraphBuilder.bottomNavGraph(navController: NavHostController) {
@@ -17,16 +21,16 @@ fun NavGraphBuilder.bottomNavGraph(navController: NavHostController) {
             HomeScreen(navController)
         }
         composable(route = BottomBarScreen.Favorite.route){
-            // Not implemented yet
+            FavoriteScreen()
         }
         composable(route = BottomBarScreen.Notification.route){
-            // Not implemented yet
+            NotificationScreen()
         }
         composable(route = BottomBarScreen.Shop.route){
-            // Not implemented yet
+            ShopScreen()
         }
         composable(route = BottomBarScreen.Profile.route){
-            // Not implemented yetHomeScreen()
+           ProfileScreen()
         }
     }
 }
