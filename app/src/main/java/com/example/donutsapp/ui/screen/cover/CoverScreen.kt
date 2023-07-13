@@ -24,6 +24,7 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.donutsapp.R
 import com.example.donutsapp.ui.composable.SpaceVertical20
+import com.example.donutsapp.ui.screen.home.navigateToHome
 import com.example.donutsapp.ui.theme.Primary
 import com.example.donutsapp.ui.theme.Secondary
 import com.example.donutsapp.ui.theme.Typography
@@ -62,7 +63,7 @@ fun CoverScreen(navController: NavController) {
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(56.dp),
-                onClick = { },
+                onClick = { navController.navigateToHome() },
                 colors = ButtonDefaults.buttonColors(Color.White)
             ) {
                 Text(

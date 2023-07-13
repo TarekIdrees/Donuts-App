@@ -10,6 +10,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
+import androidx.navigation.NavController
 import com.example.donutsapp.R
 import com.example.donutsapp.ui.composable.CustomButton
 import com.example.donutsapp.ui.screen.details.composable.BodyContent
@@ -18,7 +19,7 @@ import com.example.donutsapp.ui.theme.Primary
 import com.example.donutsapp.ui.theme.White
 
 @Composable
-fun DetailsScreen() {
+fun DetailsScreen(navController: NavController) {
     Box(
         modifier = Modifier.fillMaxSize()
     ) {
