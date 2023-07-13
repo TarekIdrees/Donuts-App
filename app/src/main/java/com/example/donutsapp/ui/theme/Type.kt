@@ -39,13 +39,24 @@ val Typography = Typography(
         fontWeight = FontWeight.Medium,
         fontSize = 18.sp
     ),
-    bodySmall = TextStyle(
+    titleSmall = TextStyle(
         fontFamily = Inter,
+        fontWeight = FontWeight.Medium,
+        fontSize = 16.sp
+    )
+    ,bodySmall = TextStyle(
+        fontFamily = Inter,
+        fontWeight = FontWeight.Medium,
         fontSize = 14.sp
     ),
     displaySmall = TextStyle(
         fontFamily = Inter,
         fontWeight = FontWeight.Medium,
         fontSize = 22.sp
+    ),
+    labelSmall = TextStyle(
+        fontFamily = Inter,
+        fontWeight = FontWeight.Normal,
+        fontSize = 12.sp
     )
 )

@@ -25,7 +25,7 @@ fun BodyContent(modifier: Modifier) {
     ) {
         Image(
             modifier = Modifier.fillMaxSize(),
-            painter = rememberAsyncImagePainter(R.drawable.details_donut),
+            painter = rememberAsyncImagePainter(R.drawable.strawberry_wheel_donut),
             contentScale = ContentScale.Crop,
             contentDescription = "donut logo"
         )
