@@ -21,6 +21,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.example.donutsapp.R
@@ -61,7 +62,11 @@ private fun BottomSheetContain() {
     ) {
         Text(text = "Strawberry Wheel", style = Typography.titleLarge, color = Primary)
         SpaceVertical33()
-        Text(text = stringResource(R.string.about_gonut), style = Typography.titleMedium, color = Black80)
+        Text(
+            text = stringResource(R.string.about_gonut),
+            style = Typography.titleMedium,
+            color = Black80
+        )
         SpaceVertical16()
         Text(
             text = "These soft, cake-like Strawberry Frosted Donuts feature fresh strawberries and a delicious fresh strawberry glaze frosting. Pretty enough for company and the perfect treat to satisfy your sweet tooth.",
@@ -79,12 +84,34 @@ private fun BottomSheetContain() {
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.Start,
         ) {
-            CustomButton(icon = R.drawable.icon_minus)
+            CustomButton(
+                modifier = Modifier.graphicsLayer(
+                    shadowElevation = 30f,
+                    shape = RoundedCornerShape(
+                        topStart = 20.dp,
+                        topEnd = 20.dp,
+                        bottomStart = 20.dp,
+                        bottomEnd = 20.dp
+                    ),
+                    translationY = 10f,
+                ),
+                icon = R.drawable.icon_minus
+            )
             SpaceHorizontal20()
             Card(
-                modifier = Modifier.size(45.dp),
+                modifier = Modifier
+                    .size(45.dp)
+                    .graphicsLayer(
+                        shadowElevation = 30f,
+                        shape = RoundedCornerShape(
+                            topStart = 20.dp,
+                            topEnd = 20.dp,
+                            bottomStart = 20.dp,
+                            bottomEnd = 20.dp
+                        ),
+                        translationY = 10f,
+                    ),
                 colors = CardDefaults.cardColors(Color.White),
-                elevation = CardDefaults.cardElevation(2.dp),
                 shape = RoundedCornerShape(15.dp)
             ) {
                 Column(
@@ -92,11 +119,25 @@ private fun BottomSheetContain() {
                     horizontalAlignment = Alignment.CenterHorizontally,
                     verticalArrangement = Arrangement.Center
                 ) {
-                    Text(text = "1", style = Typography.displaySmall)
+                    Text(text = "1", style = Typography.displaySmall, color = Color.Black)
                 }
             }
             SpaceHorizontal20()
-            CustomButton(icon = R.drawable.icon_plus, color = Color.Black, iconColor = Color.White)
+            CustomButton(
+                modifier = Modifier.graphicsLayer(
+                    shadowElevation = 30f,
+                    shape = RoundedCornerShape(
+                        topStart = 20.dp,
+                        topEnd = 20.dp,
+                        bottomStart = 20.dp,
+                        bottomEnd = 20.dp
+                    ),
+                    translationY = 10f,
+                ),
+                icon = R.drawable.icon_plus,
+                color = Color.Black,
+                iconColor = Color.White
+            )
         }
         SpaceVertical47()
         Row(
@@ -106,14 +147,18 @@ private fun BottomSheetContain() {
             horizontalArrangement = Arrangement.SpaceEvenly,
             verticalAlignment = Alignment.CenterVertically
         ) {
-            Text("£16", style = Typography.titleLarge)
+            Text("£16", style = Typography.titleLarge, color = Color.Black)
             SpaceHorizontal26()
             Button(
                 modifier = Modifier.size(height = 67.dp, width = 268.dp),
                 onClick = { },
                 colors = ButtonDefaults.buttonColors(Primary)
             ) {
-                Text(stringResource(R.string.add_to_cart), style = Typography.labelMedium, color = Color.White)
+                Text(
+                    stringResource(R.string.add_to_cart),
+                    style = Typography.labelMedium,
+                    color = Color.White
+                )
             }
         }
 

@@ -30,7 +30,7 @@ fun DetailsScreen(navController: NavController) {
         ) {
             val (header, bottomSheet) = createRefs()
             val guideline = createGuidelineFromTop(0.4f)
-            BodyContent(Modifier.constrainAs(header) { top.linkTo(parent.top) })
+            BodyContent(navController, Modifier.constrainAs(header) { top.linkTo(parent.top) })
             BottomSheet(Modifier.constrainAs(bottomSheet) { top.linkTo(guideline) })
         }
         CustomButton(
