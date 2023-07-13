@@ -66,9 +66,9 @@ private fun HomeContent(
                 LazyRow(
                     contentPadding = PaddingValues(horizontal = 40.dp)
                 ) {
-                    state.donutsOffer.forEach {
+                    state.donutsOffer.forEachIndexed { index, donutOffer ->
                         item {
-                            DetailsCard(navController, it)
+                            DetailsCard(navController, index, donutOffer)
                         }
                     }
                 }

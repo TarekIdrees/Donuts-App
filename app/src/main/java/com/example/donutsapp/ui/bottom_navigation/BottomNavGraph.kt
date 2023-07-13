@@ -1,15 +1,16 @@
 package com.example.donutsapp.ui.bottom_navigation
 
-import androidx.compose.runtime.Composable
+import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
-import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import androidx.navigation.navigation
+import com.example.donutsapp.navigation.Graph
 import com.example.donutsapp.ui.screen.home.HomeScreen
 
-@Composable
-fun BottomNavGraph(navController: NavHostController) {
-    NavHost(
-        navController = navController,
+
+fun NavGraphBuilder.bottomNavGraph(navController: NavHostController) {
+    navigation(
+        route = Graph.route,
         startDestination = BottomBarScreen.Home.route
     ) {
         composable(route = BottomBarScreen.Home.route){

@@ -43,9 +43,9 @@ import com.example.donutsapp.ui.theme.cardPink
 @Composable
 fun DetailsCard(
     navController: NavController,
+    donutIndex: Int,
     donut: DonutOffer
 ) {
-    val colors: List<Color> = listOf(cardPink, cardBlue)
     Box(
         modifier = Modifier.padding(end = 47.dp)
     ) {
@@ -62,7 +62,10 @@ fun DetailsCard(
                     ),
                     translationY = 10f,
                 )
-                .background(color = colors.random(), shape = RoundedCornerShape(20.dp))
+                .background(
+                    color = if (donutIndex % 2 == 0) cardPink else cardBlue,
+                    shape = RoundedCornerShape(20.dp)
+                )
                 .clickable { navController.navigateToDetails() },
             verticalArrangement = Arrangement.SpaceBetween
         ) {
@@ -126,7 +129,7 @@ fun DetailsCard(
                 .size(width = 200.dp, height = 200.dp),
             painter = painterResource(id = donut.image),
             contentDescription = "donut image",
-            contentScale = ContentScale.Fit
+            contentScale = ContentScale.Crop
         )
     }
 }
