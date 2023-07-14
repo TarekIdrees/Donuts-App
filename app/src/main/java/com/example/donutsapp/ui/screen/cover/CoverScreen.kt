@@ -20,8 +20,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavController
-import androidx.navigation.compose.rememberNavController
+import com.example.donutsapp.LocalNavigationProvider
 import com.example.donutsapp.R
 import com.example.donutsapp.ui.composable.SpaceVertical20
 import com.example.donutsapp.ui.screen.home.navigateToHome
@@ -31,7 +30,8 @@ import com.example.donutsapp.ui.theme.Typography
 import com.example.donutsapp.ui.theme.White
 
 @Composable
-fun CoverScreen(navController: NavController) {
+fun CoverScreen() {
+    val navController = LocalNavigationProvider.current
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -79,5 +79,5 @@ fun CoverScreen(navController: NavController) {
 @Preview
 @Composable
 fun Preview() {
-    CoverScreen(navController = rememberNavController())
+    CoverScreen()
 }

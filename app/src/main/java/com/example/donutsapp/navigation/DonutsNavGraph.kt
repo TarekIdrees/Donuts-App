@@ -1,23 +1,25 @@
 package com.example.donutsapp.navigation
 
 import androidx.compose.runtime.Composable
-import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
+import com.example.donutsapp.LocalNavigationProvider
 import com.example.donutsapp.ui.bottom_navigation.bottomNavGraph
 import com.example.donutsapp.ui.screen.cover.coverRoute
 import com.example.donutsapp.ui.screen.details.detailsRoute
 import com.example.donutsapp.ui.screen.home.homeRoute
 
 @Composable
-fun DonutsAppNavGraph(navController: NavHostController) {
+fun DonutsAppNavGraph() {
+    val navController = LocalNavigationProvider.current
+
     NavHost(
         navController = navController,
         startDestination = Screen.CoverScreen.route
     ) {
-        bottomNavGraph(navController)
-        coverRoute(navController)
-        homeRoute(navController)
-        detailsRoute(navController)
+        bottomNavGraph()
+        coverRoute()
+        homeRoute()
+        detailsRoute()
     }
 }
 

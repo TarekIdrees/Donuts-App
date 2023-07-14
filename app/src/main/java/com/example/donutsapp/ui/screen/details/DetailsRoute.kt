@@ -10,6 +10,6 @@ fun NavController.navigateToDetails() {
     navigate(ROUTE)
 }
 
-fun NavGraphBuilder.detailsRoute(navController: NavController) {
-    composable(ROUTE) { DetailsScreen(navController = navController) }
+fun NavGraphBuilder.detailsRoute() {
+    composable(ROUTE) { DetailsScreen() }
 }

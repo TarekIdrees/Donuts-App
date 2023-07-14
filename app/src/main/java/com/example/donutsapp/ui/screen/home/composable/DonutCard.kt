@@ -21,7 +21,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.navigation.NavController
+import com.example.donutsapp.LocalNavigationProvider
 import com.example.donutsapp.ui.screen.details.navigateToDetails
 import com.example.donutsapp.ui.screen.home.Donut
 import com.example.donutsapp.ui.theme.Black60
@@ -31,9 +31,9 @@ import com.example.donutsapp.ui.theme.Typography
 
 @Composable
 fun DonutCard(
-    navController: NavController,
     donut: Donut
 ) {
+    val navController = LocalNavigationProvider.current
     Box(modifier = Modifier.padding(end = 21.dp)) {
         Column(
             modifier = Modifier
@@ -57,8 +57,7 @@ fun DonutCard(
                         bottomEnd = 10.dp
                     )
                 )
-                .clickable { navController.navigateToDetails() }
-            ,
+                .clickable { navController.navigateToDetails() },
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {

@@ -10,6 +10,6 @@ fun NavController.navigateToCover() {
     navigate(ROUTE)
 }
 
-fun NavGraphBuilder.coverRoute(navController: NavController) {
-    composable(ROUTE) { CoverScreen(navController = navController) }
+fun NavGraphBuilder.coverRoute() {
+    composable(ROUTE) { CoverScreen() }
 }

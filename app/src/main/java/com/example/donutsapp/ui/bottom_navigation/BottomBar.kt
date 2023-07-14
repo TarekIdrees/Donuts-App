@@ -9,13 +9,14 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.navigation.NavDestination.Companion.hierarchy
-import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
+import com.example.donutsapp.LocalNavigationProvider
 import com.example.donutsapp.navigation.Screen
 import com.example.donutsapp.ui.theme.Primary
 
 @Composable
-fun BottomBar(navController: NavHostController) {
+fun BottomBar() {
+    val navController = LocalNavigationProvider.current
 
     val screens = listOf(
         BottomBarScreen.Home,
@@ -24,7 +25,6 @@ fun BottomBar(navController: NavHostController) {
         BottomBarScreen.Shop,
         BottomBarScreen.Profile,
     )
-
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentDestination = navBackStackEntry?.destination
 

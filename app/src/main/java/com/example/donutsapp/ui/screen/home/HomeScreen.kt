@@ -17,7 +17,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.navigation.NavController
 import com.example.donutsapp.ui.composable.SpaceVertical26
 import com.example.donutsapp.ui.composable.SpaceVertical47
 import com.example.donutsapp.ui.screen.home.composable.DetailsCard
@@ -27,17 +26,15 @@ import com.example.donutsapp.ui.theme.Typography
 
 @Composable
 fun HomeScreen(
-    navController: NavController,
     viewModel: HomeViewModel = hiltViewModel(),
 ) {
     val state by viewModel.state.collectAsState()
-    HomeContent(navController = navController, state = state)
+    HomeContent(state = state)
 
 }
 
 @Composable
 private fun HomeContent(
-    navController: NavController,
     state: HomeUiState
 ) {
     LazyColumn(
@@ -68,7 +65,7 @@ private fun HomeContent(
                 ) {
                     state.donutsOffer.forEachIndexed { index, donutOffer ->
                         item {
-                            DetailsCard(navController, index, donutOffer)
+                            DetailsCard(index, donutOffer)
                         }
                     }
                 }
@@ -92,7 +89,7 @@ private fun HomeContent(
                 ) {
                     state.donuts.forEach {
                         item {
-                            DonutCard(navController, it)
+                            DonutCard(it)
                         }
                     }
                 }

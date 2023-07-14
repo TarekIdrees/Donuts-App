@@ -15,16 +15,16 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavController
 import coil.compose.rememberAsyncImagePainter
+import com.example.donutsapp.LocalNavigationProvider
 import com.example.donutsapp.R
 import com.example.donutsapp.ui.theme.Primary
 
 @Composable
 fun BodyContent(
-    navController: NavController,
     modifier: Modifier
 ) {
+    val navController = LocalNavigationProvider.current
     Box(
         modifier = modifier
             .aspectRatio(9f / 7.5f)

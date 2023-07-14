@@ -26,7 +26,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.navigation.NavController
+import com.example.donutsapp.LocalNavigationProvider
 import com.example.donutsapp.R
 import com.example.donutsapp.ui.composable.CustomButton
 import com.example.donutsapp.ui.composable.SpaceHorizontal5
@@ -42,10 +42,10 @@ import com.example.donutsapp.ui.theme.cardPink
 
 @Composable
 fun DetailsCard(
-    navController: NavController,
     donutIndex: Int,
     donut: DonutOffer
 ) {
+    val navController = LocalNavigationProvider.current
     Box(
         modifier = Modifier.padding(end = 47.dp)
     ) {
